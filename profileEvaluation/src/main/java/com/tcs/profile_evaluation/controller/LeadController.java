@@ -1,4 +1,4 @@
-package com.tcs.evaluation.profileEvaluation.controller;
+package com.tcs.profile_evaluation.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,14 +6,15 @@ import java.util.Optional;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import com.tcs.evaluation.profileEvaluation.entity.Evaluatorassigned;
-import com.tcs.evaluation.profileEvaluation.entity.Profile;
-import com.tcs.evaluation.profileEvaluation.entity.Profilestatus;
-import com.tcs.evaluation.profileEvaluation.entity.updatedProfileDetails;
-import com.tcs.evaluation.profileEvaluation.repository.Evaluator_Assigned;
-import com.tcs.evaluation.profileEvaluation.repository.ProfileRepo;
-import com.tcs.evaluation.profileEvaluation.repository.StatusRepo;
-import com.tcs.evaluation.profileEvaluation.services.LeadService;
+import com.tcs.profile_evaluation.entity.Evaluatorassigned;
+import com.tcs.profile_evaluation.entity.Profile;
+import com.tcs.profile_evaluation.entity.Profilestatus;
+import com.tcs.profile_evaluation.entity.updatedProfileDetails;
+import com.tcs.profile_evaluation.po.EvaluatorAssignedPo;
+import com.tcs.profile_evaluation.repository.Evaluator_Assigned;
+import com.tcs.profile_evaluation.repository.ProfileRepo;
+import com.tcs.profile_evaluation.repository.StatusRepo;
+import com.tcs.profile_evaluation.services.LeadService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;
@@ -33,7 +34,7 @@ public class LeadController {
 	@Autowired
 	ProfileRepo repo;
 	@Autowired
-	LeadService service;
+	LeadService leadService;
 	@Autowired
 	Evaluator_Assigned evalRepo;
 	@Autowired
@@ -41,20 +42,20 @@ public class LeadController {
 	
 	@GetMapping("/getProfiles")
 	public List<Profile> getData() {
-		return service.getAllProfile();
+		return leadService.getAllProfile();
 	}
 	
 	@PutMapping("/updateProfile")
-	public String putEvaluator(@RequestBody Evaluatorassigned eval) {
+	public String putEvaluator(@RequestBody EvaluatorAssignedPo eval) {
 		
-		return service.updateEvaluator(eval);
+		return leadService.updateEvaluator(eval);
 		
 	}
 	
 	@GetMapping("/date/{date}")
 	public int[] profileWithDate(@PathVariable String date){
 		int[] dateFilter= new int[3];
-		int hired=0; int nothired=0; int waiting=0;
+		int hired=0; int nothired=0; 
 		List<Integer> list= repo.findByDate(date);
 		dateFilter[0]=list.size();
 		List<Profilestatus> listStatus= checkStatus.findAllById(list);

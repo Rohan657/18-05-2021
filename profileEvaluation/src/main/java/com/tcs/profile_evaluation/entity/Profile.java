@@ -1,4 +1,6 @@
-package com.tcs.evaluation.profileEvaluation.entity;
+package com.tcs.profile_evaluation.entity;
+
+import java.time.LocalDate;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -14,13 +16,13 @@ public class Profile {
 	private int id;
 	private String vendor;
 	private String name;
-	private String mobileno;
+	private Long mobileno;
 	private String location;
 	private Float experience;
 	private String skill1;
 	private String skill2;
-	@JsonFormat(pattern = "yyyy-mm-dd")
-	private String date;
+
+	private LocalDate date;
 	
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "id")
@@ -33,10 +35,10 @@ public class Profile {
 	public void setStatus(Profilestatus status) {
 		this.profilestatus = status;
 	}
-	public void setDate(String date) {
+	public void setDate(LocalDate date) {
 		this.date = date;
 	}
-	public String getDate() {
+	public LocalDate getDate() {
 		return date;
 	}
 	public int getId() {
@@ -52,10 +54,10 @@ public class Profile {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getMobileno() {
+	public Long getMobileno() {
 		return mobileno;
 	}
-	public void setMobileno(String mobileno) {
+	public void setMobileno(Long mobileno) {
 		this.mobileno = mobileno;
 	}
 	public String getLocation() {

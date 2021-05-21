@@ -1,12 +1,13 @@
-package com.tcs.evaluation.profileEvaluation.services;
+package com.tcs.profile_evaluation.services;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.tcs.evaluation.profileEvaluation.entity.Evaluator;
-import com.tcs.evaluation.profileEvaluation.repository.EvaluatorRepo;
-import com.tcs.evaluation.profileEvaluation.repository.Evaluator_Assigned;
-import com.tcs.evaluation.profileEvaluation.repository.ProfileRepo;
+
+import com.tcs.profile_evaluation.entity.Evaluator;
+import com.tcs.profile_evaluation.repository.EvaluatorRepo;
+import com.tcs.profile_evaluation.repository.Evaluator_Assigned;
+import com.tcs.profile_evaluation.repository.ProfileRepo;
 
 @Service
 public class EvaluatorService {

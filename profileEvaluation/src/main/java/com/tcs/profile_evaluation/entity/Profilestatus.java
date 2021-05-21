@@ -1,4 +1,4 @@
-package com.tcs.evaluation.profileEvaluation.entity;
+package com.tcs.profile_evaluation.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

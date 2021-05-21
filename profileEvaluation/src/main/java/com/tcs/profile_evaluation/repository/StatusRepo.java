@@ -1,8 +1,8 @@
-package com.tcs.evaluation.profileEvaluation.repository;
+package com.tcs.profile_evaluation.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.tcs.evaluation.profileEvaluation.entity.Profilestatus;
+import com.tcs.profile_evaluation.entity.Profilestatus;
 
 public interface StatusRepo extends JpaRepository<Profilestatus, Integer> {
 

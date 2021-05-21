@@ -1,4 +1,4 @@
-package com.tcs.evaluation.profileEvaluation.controller;
+package com.tcs.profile_evaluation.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tcs.evaluation.profileEvaluation.entity.Evaluator;
-import com.tcs.evaluation.profileEvaluation.entity.Evaluatorassigned;
-import com.tcs.evaluation.profileEvaluation.entity.Profile;
-import com.tcs.evaluation.profileEvaluation.entity.Profilestatus;
-import com.tcs.evaluation.profileEvaluation.repository.Evaluator_Assigned;
-import com.tcs.evaluation.profileEvaluation.repository.ProfileRepo;
-import com.tcs.evaluation.profileEvaluation.repository.StatusRepo;
-import com.tcs.evaluation.profileEvaluation.services.EvaluatorService;
+import com.tcs.profile_evaluation.entity.Evaluator;
+import com.tcs.profile_evaluation.entity.Evaluatorassigned;
+import com.tcs.profile_evaluation.entity.Profile;
+import com.tcs.profile_evaluation.entity.Profilestatus;
+import com.tcs.profile_evaluation.repository.Evaluator_Assigned;
+import com.tcs.profile_evaluation.repository.ProfileRepo;
+import com.tcs.profile_evaluation.repository.StatusRepo;
+import com.tcs.profile_evaluation.services.EvaluatorService;
 
 @RestController
 @CrossOrigin

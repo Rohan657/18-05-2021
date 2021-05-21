@@ -1,4 +1,4 @@
-package com.tcs.evaluation.profileEvaluation.po;
+package com.tcs.profile_evaluation.po;
 
 import org.springframework.stereotype.Component;
 
@@ -10,14 +10,13 @@ public class Profilepo {
 	private int id;
 	private String vendor;
 	private String name;
-	private String mobileno;
+	private Long mobileno;
 	private String location;
 	private Float experience;
 	private String skill1;
 	private String skill2;
 	private String skill3;
-	@JsonFormat(pattern = "yyyy-mm-dd")
-	private String date;
+	
 	
 	
 	public int getId() {
@@ -38,10 +37,10 @@ public class Profilepo {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getMobileno() {
+	public Long getMobileno() {
 		return mobileno;
 	}
-	public void setMobileno(String mobileno) {
+	public void setMobileno(Long mobileno) {
 		this.mobileno = mobileno;
 	}
 	public String getLocation() {
@@ -74,10 +73,5 @@ public class Profilepo {
 	public void setSkill3(String skill3) {
 		this.skill3 = skill3;
 	}
-	public String getDate() {
-		return date;
-	}
-	public void setDate(String date) {
-		this.date = date;
-	}
+	
 }
